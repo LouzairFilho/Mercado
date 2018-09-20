@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>.:: SisCPP ::.</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+</head>
+<body>
+	<form method="POST" th:action="@{/compras}" th:object="${compra}"
+		name="notinha">
+		<div class="container-fluid col-md-12 " >
+		<div class="col-md-6 col-xs-12  form-group"></div>
+		<div class="col-md-6 col-xs-12  form-group">
+			<div class="row">
+				<div class="col-xs-12  form-group">
+					<label for="mercado" class="control-label">Supermercado</label>
+					<input type="text" class="form-control" id="mercado" th:field="*{mercado}" />
+				</div>
+				<div class="col-xs-12  form-group">
+					<label for="descricao" class="control-label">Descrição Produto</label>
+					<input type="text" class="form-control" id="descricao" th:field="*{itemTemp.descricao}" />
+				</div>
+				<div class="col-xs-6  form-group">
+					<label for="quantidade" class="control-label">Quantidade</label>
+					<input type="number" class="form-control" id="quantidade" th:field="*{itemTemp.quantidade}" />
+				</div>
+				<div class="col-xs-6  form-group">
+					<label for="valorItem" class="control-label">Valor</label>
+					<input type="text" class="form-control" id="valorItem" th:field="*{itemTemp.valorItem}" />
+				</div>
+				
+			</div>
+			</div>
+		</div>
+	</form>
+
+
+
+
+
+
+
+
+	<script type="text/javascript"
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+		crossorigin="anonymous"></script>
+		
+		<script type="text/javascript">
+		 function {
+			    $('#valorItem').mask('(00) 0000-0000');
+		 }
+					
+		
+		</script>
+</body>
+</html>

@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 @Entity
 public class Compra {
@@ -23,6 +24,8 @@ public class Compra {
 	private Double valorCompra;
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Item> item;
+	@Transient
+	private Item itemTemp;
 	
 	@Temporal(TemporalType.DATE)
 	private Date dataCompra;
@@ -66,5 +69,14 @@ public class Compra {
 	public void setDataCompra(Date dataCompra) {
 		this.dataCompra = dataCompra;
 	}
+
+	public Item getItemTemp() {
+		return itemTemp;
+	}
+
+	public void setItemTemp(Item itemTemp) {
+		this.itemTemp = itemTemp;
+	}
+	
 	
 }
